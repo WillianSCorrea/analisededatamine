@@ -1,0 +1,14 @@
+﻿fase;tecnica;base;como_foi_usada;justificativa
+ETL;ETL / padronização de formatos;Todas;"Leitura de TXT (|) e CSV (,) para DataFrames; delimitadores mistos do financeiro normalizados";Unificar formatos heterogêneos antes de qualquer análise
+Limpeza;Detecção de outliers (IQR);alunos;"Limites Q1-1,5·IQR e Q3+1,5·IQR na renda; regra de faixa plausível na idade";Distinguir erro de digitação (idade 150) de valor extremo legítimo
+Transformação;Criação de variáveis;alunos;faixa_etaria e faixa_renda (quartis);Facilitar comparação entre grupos no dashboard
+Limpeza;Padronização de formatos / correção de inconsistências;alunos;sexo unificado, vírgula decimal da renda, idade recalculada;Garantir tipos e categorias consistentes
+Transformação;Agregação;matriculas;1 linha por aluno (matrícula de maior semestre) + contagens e flags;"Evitar duplicação de alunos ao integrar e definir a variável-alvo ""evadido"""
+Limpeza;Correção de inconsistências;notas;Notas <0 ou >10 tratadas como inválidas (nulo) e sinalizadas;"Escala válida é 0-10; manter flag permite medir impacto"
+Transformação;Agregação / criação de variáveis;notas;"Média, mediana, desvio e média por disciplina por aluno; aprovado_medio (média ≥ 6)";Resumir desempenho em nível de aluno
+Transformação;Agregação;acessos;Nº de acessos, tempo total/médio logado e páginas médias por aluno;Medir engajamento digital em nível de aluno
+Transformação;Agregação / criação de variáveis;redes;Média por aluno e taxa de engajamento (interações/seguidores);Resolver duplicidade de id_aluno e criar indicador comparável
+Limpeza;Remoção de duplicidades / tratamento de ausentes;financeiro;"Dedup por id_lancamento; remoção de linhas sem aluno/situação; mensalidade negativa → nulo";Evitar dupla contagem e valores impossíveis
+Transformação;Agregação;financeiro;Indicadores por aluno (nº lançamentos, % em atraso, total pago) e série por competência;Base de inadimplência para integração e dashboard
+Transformação;Criação de variáveis;deslocamento;velocidade_kmh = distância / tempo;Comparar eficiência entre meios de transporte
+Integração;Junção (merge) por id_aluno;Todas;Left join a partir das matrículas consolidadas + flags de cobertura;"Chave comum entre bases; flags evitam confundir ""sem registro"" com ""valor zero"""

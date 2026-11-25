@@ -1,0 +1,26 @@
+﻿base;problema;ocorrencias;total_linhas;percentual;tratamento
+financeiro;"Linhas com delimitador "";"" em vez de ""|""";4900;1000000;0.49;"Padronizado para ""|"" antes da leitura"
+alunos;"sexo fora do padrão (variações como ""Masculino"", "" fem "", ""X"")";8229;1000000;0.823;Padronizado em F / M / Outro
+alunos;sexo ausente;4118;1000000;0.412;"Mantido como nulo (categoria ""Não informado"" nas análises)"
+alunos;idade fora de 16-90 (ex.: -3, 150);8668;1000000;0.867;"Recalculada pela data de nascimento; nula se indisponível"
+alunos;idade ausente;6086;1000000;0.609;Recalculada pela data de nascimento quando possível
+alunos;renda negativa;2079;1000000;0.208;Convertida em nulo
+alunos;renda ausente;8037;1000000;0.804;Mantida nula (sem imputação nesta fase)
+alunos;renda outlier (IQR);0;1000000;0.0;"Apenas sinalizado; mantido"
+alunos;cidade com grafia variante ou placeholder (Matto, Sao Paulo, araraquara, Desconhecida);9844;1000000;0.984;"Grafia corrigida; ""Desconhecida"" tratada como ausente"
+alunos;cidade ausente;2404;1000000;0.24;"Categoria ""Não informada"""
+alunos;nome removido (anonimização);1000000;1000000;100.0;"Coluna descartada; não usada em nenhuma análise"
+matriculas;matrículas duplicadas (linha inteira);0;700000;0.0;Nenhuma
+matriculas;alunos com mais de uma matrícula;203762;376925;54.059;Consolidados em 1 linha por aluno (matrícula de maior semestre)
+matriculas;alunos com status conflitante entre matrículas;113710;376925;30.168;"status_final = matrícula de maior semestre; flag status_conflitante e evadiu_alguma preservados"
+notas;nota fora da escala 0-10;171127;600000;28.521;Convertida em nulo (flag nota_invalida). PREMISSA a confirmar com o professor
+acessos;linhas duplicadas;0;400000;0.0;Nenhuma
+redes;id_aluno repetido (várias leituras);74759;300000;24.92;Agregado pela média por aluno
+financeiro;id_lancamento duplicado;4992;1000000;0.499;Mantida a primeira ocorrência
+financeiro;id_aluno ausente;1213;1000000;0.121;Linhas removidas (impossível integrar)
+financeiro;situacao_financeira ausente;1284;1000000;0.128;Linhas removidas dos indicadores de situação
+financeiro;mensalidade negativa;9979;1000000;0.998;Convertida em nulo
+financeiro;situação PAGO com valor_pago = 0;5009;1000000;0.501;"Sinalizado; mantido"
+financeiro;situação diferente de PAGO com valor_pago > 0;5131;1000000;0.513;"Sinalizado; mantido"
+deslocamento;alunos com mais de um registro;4;1000;0.4;"Mantidos todos na tabela de fatos; na base analítica usa-se o registro mais recente"
+frequencia;base com apenas 20 registros / 9 alunos;20;20;100.0;"Excluída da modelagem; sem poder estatístico"

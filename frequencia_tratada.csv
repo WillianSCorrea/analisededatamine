@@ -1,0 +1,21 @@
+﻿id_frequencia;id_aluno;data_aula;curso;disciplina;turno;situacao;minutos_atraso
+FREQ000000001;10245;2024-02-15;Engenharia de Software;Algoritmos e Programação;Matutino;Presente;0
+FREQ000000002;83921;2024-02-15;Administração;Gestão Estratégica;Noturno;Atrasado;15
+FREQ000000003;45210;2024-02-15;Direito;Direito Constitucional;Vespertino;Ausente;0
+FREQ000000004;12093;2024-02-15;Medicina;Anatomia Humana;Matutino;Presente;0
+FREQ000000005;73104;2024-02-15;Engenharia de Software;Bancos de Dados;Noturno;Atrasado;8
+FREQ000000006;94821;2024-02-16;Ciência da Computação;Sistemas Operacionais;Matutino;Presente;0
+FREQ000000007;31029;2024-02-16;Administração;Finanças Corporativas;Noturno;Ausente;0
+FREQ000000008;65412;2024-02-16;Psicologia;Psicologia Cognitiva;Vespertino;Presente;0
+FREQ000000009;10245;2024-02-16;Engenharia de Software;Engenharia de Requisitos;Matutino;Atrasado;22
+FREQ000000010;58201;2024-02-16;Direito;Direito Penal;Noturno;Presente;0
+FREQ000000011;83921;2024-02-19;Administração;Marketing Digital;Noturno;Presente;0
+FREQ000000012;45210;2024-02-19;Direito;Teoria Geral do Processo;Vespertino;Atrasado;5
+FREQ000000013;73104;2024-02-19;Engenharia de Software;Algoritmos e Programação;Noturno;Presente;0
+FREQ000000014;12093;2024-02-19;Medicina;Fisiologia Humana;Matutino;Ausente;0
+FREQ000000015;94821;2024-02-20;Ciência da Computação;Estrutura de Dados;Matutino;Presente;0
+FREQ000000016;31029;2024-02-20;Administração;Gestão de Pessoas;Noturno;Atrasado;12
+FREQ000000017;65412;2024-02-20;Psicologia;Desenvolvimento Humano;Vespertino;Presente;0
+FREQ000000018;58201;2024-02-20;Direito;Direito Civil;Noturno;Presente;0
+FREQ000000019;10245;2024-02-21;Engenharia de Software;Arquitetura de Software;Matutino;Ausente;0
+FREQ000000020;83921;2024-02-21;Administração;Contabilidade Geral;Noturno;Presente;0
